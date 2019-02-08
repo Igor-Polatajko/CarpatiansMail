@@ -16,7 +16,10 @@ public class LetterFormatter {
 
     public SendedMessage messageTo(String eMail, String senderEmail, String content, String letterID) {
         return new SendedMessage("Запит", letterID + " - скопіюйте це і вставте першим словом у відповіді \r\n" +
-                "Запит від " + senderEmail + "\r\n\r\n" + content)
+                "Запит від " + senderEmail + "\r\n\r\n" +
+                "-----------------------------\r\n" +
+                "Зміст листа:\r\n\r\n" +
+                content)
                 .from(serverName)
                 .to(eMail.trim());
     }
@@ -33,8 +36,10 @@ public class LetterFormatter {
                 "Запит від " + senderEmail + "\r\n\r\n" +
                 "Запит погодили: \r\n" + (peopleWhoAcceptIt.size() > 0 ? whoAcceptItString :
                 "(список пустий)")
-                + "\r\n\r\n"
-                + content)
+                + "\r\n\r\n"+
+                "-----------------------------\r\n" +
+                "Зміст листа:\r\n\r\n" +
+                 content)
                 .from(serverName)
                 .to(eMail.trim());
     }

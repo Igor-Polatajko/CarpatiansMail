@@ -39,7 +39,7 @@ public class Parser {
 					for(Employee e : fullEmployeesCollection) {
 						boolean condition1 = 
 								e.getName().equals(sheet.getRow(i).getCell(0).getStringCellValue().trim()) &&
-								e.getPosition().equals(sheet.getRow(i).getCell(1).getStringCellValue().trim());
+								e.getEmail().equals(sheet.getRow(i).getCell(2).getStringCellValue().trim());
 						if(condition1) {
 							employee = e;
 						}

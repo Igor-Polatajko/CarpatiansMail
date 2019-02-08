@@ -84,7 +84,7 @@ public class Letter implements Serializable {
 
     public void badAttachmentFormat() {
 
-        client.send(letterFormatter.sentErrorMessage("Помилка в Excel таблиці. Зірочкою (*) було відмічено одне або більше полів з іменами людей"
+        client.send(letterFormatter.sentErrorMessage("Помилка в Excel таблиці. Зірочкою (*) було відмічено одне або більше полів з іменами людей,"
                 + " відомостей про яких немає в базі даних", senderEmail), new ISender.SendCallback() {
             public void onError(MessagingException e) {
                 logger.log(e);
